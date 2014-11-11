@@ -1,47 +1,83 @@
+
 <!DOCTYPE html>
 <html>
 <head><title>Test Web App for Tomcat 7 or Other Servlet 3.0 Container</title>
 <link rel="stylesheet"
       href="./css/styles.css"
       type="text/css"/>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
 </head>
 <body>
 <table class="title">
-  <tr><th>Test Web App for Tomcat 7</th></tr>
+  <tr><th>Fast Cafe</th></tr>
 </table>
 <p/>
 <fieldset>
-<legend>Testing Simple Pages</legend>
+<legend>Pages</legend>
 <ul>
-  <li><a href="hello.html">hello.html</a> Simple HTML page.</li>
-  <li><a href="hello.jsp">hello.jsp</a> Simple JSP page.</li>
+  <li><a href="https://docs.google.com/document/d/1JSo2BDuKwBPWg1isb6jPG5KLXeVrdfdJOINHK2TFuSk/edit">API documentation</a></li>
 </ul>
 </fieldset>
 <p/>
 <fieldset>
-<legend>Testing Simple Servlets</legend>
+<legend>Testing API methods</legend>
 <ul>
-  <li><a href="hello">hello</a> The HelloWorld servlet that
-      generates plain text.</li>
-  <li><a href="test1">test1</a> The TestServlet that generates 
-      HTML, accessed via the URL given in the @WebServlet 
-      annotation in the Java source code.</li>
-  <li><a href="test2">test2</a> The TestServlet, accessed via
-      the URL given in the web.xml file.</li>
-  <li><a href="test-with-utils">test-with-utils</a> TestServlet2, 
-      which internally uses ServletUtilities.</li>
+	<li><a href=changePass>changePass</a>  
+		<br/>@parameters: "old_pass", "new_pass", "access_token"
+		<br/>@return: "successfully" - true/false
+	</li>
+	<li><a href=createNewUser>createNewUser</a>
+		<br/>@parameters: "phone", "pass"
+		<br/>@return: "response" - true/false
+	</li>
+	<li><a href=getMenu>getMenu</a>
+		<br/>@parameters:
+		<br/>@return: "response" - JSONArray MenuItem
+	</li>
+	<li><a href=getMenuByCategory>getMenuByCategory</a>
+		<br/>@parameters: "category"
+		<br/>@return: "response" - JSONArray MenuItem
+	</li>
+	<li><a href=getMenuVersion>getMenuVersion</a>
+		<br/>@parameter:
+		<br/>@return "response" - версия меню
+	</li>
+	<li><a href=getProfile>getProfile</a>
+		<br/>@parameters: "access_token"
+		<br/>@return: JSONObject Profile
+	</li>
+	<li><a href=isFreePhoneNumber>isFreePhoneNumber</a>
+		<br/>@parameters: "phone"
+		<br/>@return: "response" - true/false
+	</li>
+	<li><a href=lifeTimeAccessToken>lifeTimeAccessToken</a>
+		<br/>@parameters: "access_token"
+		<br/>@return: "response" - время жизни токена
+	</li>
+	<li><a href=login>login</a>
+		<br/>@parameters: "pnome", "pass"
+		<br/>@return: "access_token" - Access Token
+		<br/>@return: "successfuly" - true/false
+	</li>
+	<li><a href=resetPass>resetPass</a>
+		<br/>@parameters: "phone"
+		<br/>@return: "successfuly" - true/false
+	</li>
+	<li><a href=setName>setName</a>
+		<br/>@parameters: "name", "access_token"
+		<br/>@return: "response" - true/false
+	</li>
+  
 </ul>
 </fieldset>
 <p/>
 
  
 <br/><br/><br/><br/><br/><br/>
-<font size="-3">All code from the
-<a href="http://courses.coreservlets.com/Course-Materials/">
-coreservlets.com J2EE tutorials (servlets, JSP, Struts, JSF 1, JSF 2, PrimeFaces, Ajax [with jQuery], GWT 2, Spring, Hibernate, JPA,
-SOAP-based and RESTful Web Services, Hadoop, &amp; Java 7 programming)</a>. There are also live instructor-led
-<a href="http://courses.coreservlets.com/">training courses on
-the same J2EE topics (servlets, JSP, Struts, JSF 1, JSF 2, PrimeFaces, Ajax [with jQuery], GWT 0, Spring, Hibernate, JPA,
-SOAP-based and RESTful Web Services, Hadoop, &amp; Java 7 programming)</a>.
-</font>
+<div align="right">
+	<font size="-3">
+	Created by Kirill Altukhov
+	</font>
+</div>
+
 </body></html>

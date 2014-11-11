@@ -1,5 +1,6 @@
 package serverPackege;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.json.JSONException;
@@ -16,6 +17,7 @@ import SQL.SQLClasses;
  * @paramteres: "old_pass", "new_pass", "access_token"
  * @return: "successfully" - true/false
  */
+@WebServlet("/changePass")
 public class changePass extends BaseServer {
 
 	private static final long serialVersionUID = 1L;

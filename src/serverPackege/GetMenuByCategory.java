@@ -23,7 +23,7 @@ import SQL.SQLClasses;
  *
  */
 
-@WebServlet("/GetMenuByCategory")
+@WebServlet("/getMenuByCategory")
 public class GetMenuByCategory extends BaseServer {
 
 

@@ -19,7 +19,7 @@ import SQL.SQLClasses;
  * @return: "response" - true/false
  */
 
-@WebServlet("/IsFreePhoneNumber")
+@WebServlet("/isFreePhoneNumber")
 public class IsFreePhoneNumber extends BaseServer {
 	
 	private static final long serialVersionUID = 1L;

@@ -20,7 +20,7 @@ import SQL.SQLClasses;
  *
  */
 
-@WebServlet("/CreateNewUser")
+@WebServlet("/createNewUser")
 public class CreateNewUser extends BaseServer {
 
 

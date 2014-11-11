@@ -11,5 +11,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/Users/Kirill/Documents/libraris/javax.servlet-3.0.jar"/>
 	<classpathentry kind="var" path="libraris/org.json-20120521.jar"/>
+	<classpathentry kind="lib" path="/Users/Kirill/Documents/libraris/mysql-connector-java-5.1.34.zip"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

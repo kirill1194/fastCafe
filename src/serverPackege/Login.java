@@ -20,7 +20,7 @@ import SQL.SQLClasses;
  * @return: "successfuly" - true/false
  */
 
-@WebServlet("/Login")
+@WebServlet("/login")
 public class Login extends BaseServer {
 
 	/**

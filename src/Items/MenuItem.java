@@ -7,22 +7,26 @@ import org.json.JSONObject;
 
 public class MenuItem {
 	
-	public MenuItem(JSONObject json) throws JSONException, MalformedURLException {
-		article = json.getString("article");
-		category = json.getString("category");
-		
-		img =json.getString("img");
-		description = json.getString("description");
-		price = json.getDouble("price");
-	}
 	public String article;
+	public String name;
 	public String category;
 	public String img;
 	public String description;
 	public double price;
 	
-	public MenuItem(String _article, String _category, String _img, String _description, double _price) {
+	public MenuItem(JSONObject json) throws JSONException, MalformedURLException {
+		article = json.getString("article");
+		category = json.getString("category");
+		name = json.getString("name");
+		img =json.getString("img");
+		description = json.getString("description");
+		price = json.getDouble("price");
+	}
+	
+	
+	public MenuItem(String _article, String _name, String _category, String _img, String _description, double _price) {
 		article = _article;
+		name = _name;
 		category = _category;
 		img = _img;
 		description = _description;
@@ -37,6 +41,7 @@ public class MenuItem {
 			ob.put("img", img);
 			ob.put("description", description);
 			ob.put("price", price);
+			ob.put("name", name);
 			return ob;
 	}
 	

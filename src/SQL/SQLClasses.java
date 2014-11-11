@@ -63,8 +63,8 @@ public class SQLClasses{
 
 	public static ArrayList<MenuItem> getMenu() throws SQLWorkException{
 		ArrayList<MenuItem> arr = new ArrayList<MenuItem>();
-		arr.add(new MenuItem("1", "2", "photo.jpg", "descript", 123.12));
-		arr.add(new MenuItem("3", "4", "photo2.jpg", "descript2", 456.12));
+		arr.add(new MenuItem("1", "kat", "2", "photo.jpg", "descript", 123.12));
+		arr.add(new MenuItem("3", "dog", "4", "photo2.jpg", "descript2", 456.12));
 		return arr;
 	}
 	
@@ -85,8 +85,8 @@ public class SQLClasses{
 	 */
 	public static ArrayList<MenuItem> getMenuByCategory(String category) throws SQLWorkException{
 		ArrayList<MenuItem> arr = new ArrayList<MenuItem>();
-		arr.add(new MenuItem("1", category, "photo.jpg", "descript", 123.12));
-		arr.add(new MenuItem("3", category, "photo2.jpg", "descript2", 456.12));
+		arr.add(new MenuItem("1", "cat", category, "photo.jpg", "descript", 123.12));
+		arr.add(new MenuItem("3", "dog", category, "photo2.jpg", "descript2", 456.12));
 		return arr;
 	}
 	

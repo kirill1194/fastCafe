@@ -18,7 +18,7 @@ import SQL.SQLClasses;
  * @return: "successfuly" - true/false
  */
 
-@WebServlet("/ResetPass")
+@WebServlet("/resetPass")
 public class ResetPass extends BaseServer{
 
 

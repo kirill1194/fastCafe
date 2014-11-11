@@ -19,7 +19,7 @@ import SQL.SQLClasses;
  * @return: "response" - время жизни токена
  */
 
-@WebServlet("/LifeTimeAccessToken")
+@WebServlet("/lifeTimeAccessToken")
 public class LifeTimeAccessToken extends BaseServer {
 
 
