@@ -50,6 +50,7 @@ public abstract class BaseServer extends HttpServlet {
 			JSONObject JSONResponse = work(request);
 			PrintWriter out = response.getWriter();
 			response.setContentType("text/html");
+			response.setCharacterEncoding("UTF-8");
 			out.println(JSONResponse.toString());
 		} catch (RequestException e) {
 			response.sendError(e.getErrorCode(), e.getMessage());

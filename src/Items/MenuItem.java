@@ -45,4 +45,10 @@ public class MenuItem {
 			return ob;
 	}
 	
+	@Override
+	public String toString() {
+		String s = article + ' ' + name + ' ' + category + ' ' + img + ' ' + description + ' ' + price;
+		return s;
+	}
+	
 }

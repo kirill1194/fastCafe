@@ -1,8 +1,27 @@
 package SQL;
 
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Random;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+
+
+
+
+
+
+import com.sun.org.apache.bcel.internal.generic.ALOAD;
 
 import serverPackege.BaseServer;
 import Exceptions.SQLWorkException;
@@ -62,6 +81,36 @@ public class SQLClasses{
 	}
 
 	public static ArrayList<MenuItem> getMenu() throws SQLWorkException{
+		Context initContext;
+		try {
+			initContext = new InitialContext();
+			Context envContext  = (Context)initContext.lookup("java:/comp/env");
+	        DataSource dataSource = (DataSource)envContext.lookup("jdbc/testdb");
+	        Connection connection = dataSource.getConnection();
+	        Statement statement = connection.createStatement();
+				
+				ResultSet rs1 = statement.executeQuery("SET NAMES utf8;");
+				ResultSet rs = statement.executeQuery("select * from menu");
+				
+				ArrayList<MenuItem> result = new ArrayList<MenuItem>();
+				while(rs.next()){
+					MenuItem temp = new MenuItem(rs.getString("ID"), rs.getString("name"), rs.getString("category"), 
+							rs.getString("img"), rs.getString("description"), rs.getDouble("price"));
+					result.add(temp);
+					System.out.println(temp.toString());
+				}
+				return result;
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+			
+		
+		
 		ArrayList<MenuItem> arr = new ArrayList<MenuItem>();
 		arr.add(new MenuItem("1", "kat", "2", "photo.jpg", "descript", 123.12));
 		arr.add(new MenuItem("3", "dog", "4", "photo2.jpg", "descript2", 456.12));
