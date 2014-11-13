@@ -47,10 +47,11 @@ public abstract class BaseServer extends HttpServlet {
 	private void processing(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		try {
-			JSONObject JSONResponse = work(request);
-			PrintWriter out = response.getWriter();
 			response.setContentType("text/html");
 			response.setCharacterEncoding("UTF-8");
+			JSONObject JSONResponse = work(request);
+			PrintWriter out = response.getWriter();
+			
 			out.println(JSONResponse.toString());
 		} catch (RequestException e) {
 			response.sendError(e.getErrorCode(), e.getMessage());

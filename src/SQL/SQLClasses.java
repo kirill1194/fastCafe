@@ -89,23 +89,27 @@ public class SQLClasses{
 	        Connection connection = dataSource.getConnection();
 	        Statement statement = connection.createStatement();
 				
-				ResultSet rs1 = statement.executeQuery("SET NAMES utf8;");
-				ResultSet rs = statement.executeQuery("select * from menu");
-				
-				ArrayList<MenuItem> result = new ArrayList<MenuItem>();
-				while(rs.next()){
-					MenuItem temp = new MenuItem(rs.getString("ID"), rs.getString("name"), rs.getString("category"), 
-							rs.getString("img"), rs.getString("description"), rs.getDouble("price"));
-					result.add(temp);
-					System.out.println(temp.toString());
-				}
-				return result;
+			//ResultSet rs1 = statement.executeQuery("SET NAMES utf8;");
+			ResultSet rs = statement.executeQuery("select * from menu");
+			
+			ArrayList<MenuItem> result = new ArrayList<MenuItem>();
+			while(rs.next()) {
+				MenuItem temp = new MenuItem(rs.getString("ID"), rs.getString("name"), rs.getString("category"), 
+						rs.getString("img"), rs.getString("description"), rs.getDouble("price"));
+				result.add(temp);
+				System.out.println(temp.toString());
+			}
+			connection.close();
+			connection = null;
+			return result;
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			
 		}
         
 			
